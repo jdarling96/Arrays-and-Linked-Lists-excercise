@@ -207,20 +207,34 @@ class LinkedList {
   /** average(): return an average of all values in the list */
 
   average() {
-    let currentNode = this.head
-      if(!this.length){
-        return 0
-      }
-      let sum = 0
-      while(currentNode){
-       sum += currentNode.val
-        currentNode = currentNode.next
+    let currentNode = this.head;
+    if (!this.length) {
+      return 0;
+    }
+    let sum = 0;
+    while (currentNode) {
+      sum += currentNode.val;
+      currentNode = currentNode.next;
+    }
+    return sum / this.length;
+  }
+  // further study question
 
-      }
-      return sum / this.length
+  // change head to tail and each increment over each node where next is the previous node
 
-      
-    
+  reverse() {
+    let currentNode = this.head;
+
+    let previous = null;
+    let nextNode = null;
+
+    while (currentNode !== null) {
+      nextNode = currentNode.next;
+      currentNode.next = previous;
+      previous = currentNode;
+      currentNode = nextNode;
+    }
+    this.head = previous;
   }
 }
 

@@ -146,4 +146,19 @@ describe("average", function() {
     let lst = new LinkedList();
     expect(lst.average()).toBe(0);
   });
+
+  describe("reverse", function(){
+    it("reverses a link list in place", function(){
+      let lst = new LinkedList([2, 3, 1, 0])
+      lst.reverse()
+
+      expect(lst.head.val).toBe(0);
+      expect(lst.head.next.val).toBe(1);
+      expect(lst.head.next.next.val).toBe(3);
+      expect(lst.head.next.next.next.val).toBe(2);
+      expect(lst.head.val).toBe(0)
+      
+    })
+
+  })
 });
